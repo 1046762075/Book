@@ -1,12 +1,9 @@
-﻿
-
-
-//检测定义的宽和高，是否合适。
+﻿//检测定义的宽和高，是否合适。
 function checkWindow(){
-	console.log("文档的宽是:"+document.body.offsetWidth);
-	console.log("文档的高是:"+document.body.offsetHeight);
-	console.log("窗口的宽是:"+$(window).width());
-	console.log("窗口的高是:"+$(window).height());
+	// console.log("文档的宽是:"+document.body.offsetWidth);
+	// console.log("文档的高是:"+document.body.offsetHeight);
+	// console.log("窗口的宽是:"+$(window).width());
+	// console.log("窗口的高是:"+$(window).height());
 	if(h>$(window).height()){
 		h = (document.body.offsetHeight-50);
 	}

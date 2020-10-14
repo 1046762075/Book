@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -44,13 +43,12 @@ var global_ids_len;
 var w ;//窗口的宽
 var h ;//窗口的高
 
-function cui(id){
+function cui(id,path){
 	//询问框
 	layer.confirm('您是否要催他还书？', {
 	  btn: ['是','取消'] //按钮
 	}, function(){
-		
-		$.post("${APP_PATH}/admin/cuihai/add",{userSubId:id},function(result){
+		$.post(path + "/admin/cuihai/add",{userSubId:id},function(result){
 			if(result.success){
 				layer.closeAll();
 				layer.msg(result.msg);
@@ -174,7 +172,7 @@ function reload_data(){
 			
 			//监听工具条 table_bar
 				table.on('tool(table)', function(obj) { //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-					
+
 					var data = obj.data //获得当前行数据
 					, layEvent = obj.event; //获得 lay-event 对应的值
 					if (layEvent === 'add_send_list') {
@@ -187,7 +185,7 @@ function reload_data(){
 						edit(data.id);
 					} else if(layEvent === 'cui'){
 						if(data.type==1){
-							cui(data.id);
+							cui(data.id, '${pageContext.request.contextPath}');
 						}else{
 							layer.msg('已归还，无需催还');
 						}
@@ -209,6 +207,5 @@ function reload_data(){
 					
 		});
 </script>
-
 </body>
 </html>

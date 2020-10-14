@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.firenay.dao.UserSubDao">
+<mapper namespace="com.th.dao.UserSubDao">
 	
 	<resultMap type="UserSub" id="UserSubResult">
 		<result property="id" column="id" />
@@ -13,8 +13,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="type" column="type" />
 		
 		
-		<association property="user" column="userId" select="com.firenay.dao.UserDao.findById"></association>
-		<association property="book" column="bookId" select="com.firenay.dao.BookDao.findById"></association>
+		<association property="user" column="userId" select="com.th.dao.UserDao.findById"></association>
+		<association property="book" column="bookId" select="com.th.dao.BookDao.findById"></association>
 		
 	</resultMap>
 

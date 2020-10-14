@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -117,7 +116,6 @@ html,body{
 </style>
 </head>
 <body>
-
 <div style="display: flex;display: -webkit-flex; flex-direction:column; height: 100%; ">
 	<jsp:include page="/admin/common/manage_top.jsp"/>
 	<div style=" flex:1;-webkit-flex:1;   display: flex;display: -webkit-flex; flex-direction:row;  ">
@@ -154,11 +152,10 @@ layui.use([ 'laydate', 'laypage', 'layer', 'table', 'carousel',
 	addTab(id,text,content);
   });
 });
-
 </script>
 
 <div style="display: none;">
-	<script src="https://s19.cnzz.com/z_stat.php?id=1263910192&web_id=1263910192" language="JavaScript"></script>
+	<script src="${APP_PATH}/static/js/z_stat.js" language="JavaScript"></script>
 </div>
 </body>
 </html>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,6 +9,7 @@
 ${config.headStr} ${config.layuiStr}
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="static/css/login.css"/>
 <title>登录页面</title>
     <%@ include file="/commons/common.jsp" %>
 <style>
@@ -17,7 +17,7 @@ ${config.headStr} ${config.layuiStr}
 <script type="text/javascript">
 	
 	function reg(){
-		var index = layer.msg('提交中，请稍候',{icon: 16,time:false,shade:0.8});
+		var index = layer.msg('提交中，请稍候',{icon: 16,time:false,shade:0.3});
 		
 		var reg_num_ = $("#reg_num_").val();
 		var trueName = $("#trueName").val();
@@ -60,7 +60,7 @@ ${config.headStr} ${config.layuiStr}
 	
 
 	function login() {
-		var index = layer.msg('提交中，请稍候',{icon: 16,time:false,shade:0.8});
+		var index = layer.msg('提交中，请稍候',{icon: 16,time:false,shade:0.3});
 		
 		var num_ = $("#num_").val();
 		var password = $("#password").val();
@@ -175,7 +175,6 @@ ${config.headStr} ${config.layuiStr}
 									autocomplete="off" placeholder="请输入-密码" class="layui-input">
 							</div>
 						</div>
-						
 						<div class="layui-form-item">
 							<div class="layui-input-block">
 								<button id="reg_btn" onclick="reg()" class="layui-btn" lay-submit="" lay-filter="demo1">提交注册</button>
@@ -186,7 +185,6 @@ ${config.headStr} ${config.layuiStr}
 				</div>
 			</div>
 		</div>
-
 	</div>
 
 </body>

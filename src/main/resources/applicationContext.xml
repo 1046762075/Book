@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>    
 <beans xmlns="http://www.springframework.org/schema/beans"    
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
-    xmlns:aop="http://www.springframework.org/schema/aop"
-    xmlns:context="http://www.springframework.org/schema/context"  
-    xmlns:tx="http://www.springframework.org/schema/tx"
-    xmlns:task="http://www.springframework.org/schema/task" 
-    xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:task="http://www.springframework.org/schema/task" xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd  
         http://www.springframework.org/schema/task  http://www.springframework.org/schema/task/spring-task.xsd
@@ -33,20 +30,20 @@
 	
 	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.firenay.dao" />
+		<property name="basePackage" value="com.th.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
 	</bean>
 	
 	
 	
-	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+	<!-- (事务管理)transaction manager -->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
 	<!-- 自定义Realm -->
-	<bean id="myRealm" class="com.firenay.realm.MyRealm"/>
+	<bean id="myRealm" class="com.th.realm.MyRealm"/>
 	
 	<!-- 安全管理器 -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">  
@@ -116,16 +113,15 @@
     <!-- 配置事务切面 -->  
     <aop:config>  
         <aop:pointcut id="serviceOperation"  
-            expression="execution(* com.firenay.service.*.*(..))" />
+            expression="execution(* com.th.service.*.*(..))" />
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation" />  
     </aop:config>  
     
    <!-- 自动扫描 -->
-	<context:component-scan base-package="com.firenay.service" />
+	<context:component-scan base-package="com.th.service" />
 	
    <!-- 定时任务 -->
-    <context:component-scan base-package="com.firenay.quartz" />
+    <context:component-scan base-package="com.th.quartz" />
     <!--加载定时任务 -->
     <task:annotation-driven />
-    
 </beans>

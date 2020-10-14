@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -52,7 +51,6 @@ function save(){
 			layer.msg(result.msg);
 		}
 	},'json');
-	
 }
 
 
@@ -100,8 +98,7 @@ html, body {
 		      </select>
 	    </div>
 	  </div>
-	  
-	  
+
 	  <div class="layui-form-item">
 	    <label class="layui-form-label">备注</label>
 	    <div class="layui-input-block">
@@ -112,7 +109,7 @@ html, body {
 	  
 	  </form>
 		<div class="site-demo-button" style="margin-top: 20px;">
-		  <button id="save" onclick="save()" class="layui-btn site-demo-layedit" data-type="content">${btn_text }</button>
+		  <button id="save" onclick="save()" class="layui-btn site-demo-layedit" data-type="content">更新</button>
 		</div>
 </div>
 
@@ -137,7 +134,5 @@ var app = new Vue({
 });
  
 </script>
-
-
 </body>
 </html>

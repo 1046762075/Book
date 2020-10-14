@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -53,8 +52,8 @@ var h ;//窗口的高
 
 //检测定义的宽和高，是否合适。
 function checkWindow(){
-	console.log("窗口的宽是:"+$(document).width());
-	console.log("窗口的高是:"+$(document).height());
+	// console.log("窗口的宽是:"+$(document).width());
+	// console.log("窗口的高是:"+$(document).height());
 	
     //$(window).height()获取当前窗体的高度
     //$(document).height()获取当前文档的高度
