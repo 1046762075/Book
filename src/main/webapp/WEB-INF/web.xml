@@ -3,7 +3,7 @@
 id="WebApp_ID" version="2.5">  
   <display-name>aa</display-name>
   <welcome-file-list>
-    <welcome-file>go_index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 
   <!-- shiro过滤器定义 -->
