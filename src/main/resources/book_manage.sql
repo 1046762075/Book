@@ -11,7 +11,7 @@
  Target Server Version : 50729
  File Encoding         : 65001
 
- Date: 09/10/2020 23:09:34
+ Date: 15/10/2020 00:10:17
 */
 
 SET NAMES utf8mb4;
@@ -32,14 +32,22 @@ CREATE TABLE `t_book`  (
   `danjia` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `kucun` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_book
 -- ----------------------------
-INSERT INTO `t_book` VALUES (3, '1002', 'php攻略', '5520', '小红', '美山出版社', '2020-10-02', '50', 10);
-INSERT INTO `t_book` VALUES (4, '1001', 'java攻略', '5510', '小明', '美工出版社', '2020-10-01', '50', 10);
-INSERT INTO `t_book` VALUES (6, '1003', '三国演义', '5530', '小明', '中国！@@@@', '2020-10-09', '50', 20);
+INSERT INTO `t_book` VALUES (1, '1002', 'php攻略', '5520', '小红', '长沙出版社', '2020-10-02', '50', 10);
+INSERT INTO `t_book` VALUES (2, '1001', 'java攻略', '5510', '明曜', '长沙出版社', '2020-10-01', '50', 10);
+INSERT INTO `t_book` VALUES (3, '1003', '三国演义', '5530', '小明', '长沙出版社', '2020-10-09', '50', 20);
+INSERT INTO `t_book` VALUES (4, '1004', '稻草人手记', '5521', '辰熙', '长沙出版社', '2020-10-15', '50', 15);
+INSERT INTO `t_book` VALUES (5, '1005', '围城', '5522', '亭旭', '长沙出版社', '2020-10-14', '50', 20);
+INSERT INTO `t_book` VALUES (6, '1006', '花田半亩', '5533', '凌豪', '长沙出版社', '2020-10-14', '50', 30);
+INSERT INTO `t_book` VALUES (7, '1007', '活着', '5534', '翰辰', '长沙出版社', '2020-10-15', '50', 20);
+INSERT INTO `t_book` VALUES (8, '1008', '呐喊', '5535', '承钰', '长沙出版社', '2020-10-15', '50', 10);
+INSERT INTO `t_book` VALUES (9, '1009', '家', '5534', '君豪', '长沙出版社', '2020-10-11', '50', 15);
+INSERT INTO `t_book` VALUES (10, '1010', '你当像鸟飞往你的山 ', '5535', '希伦', '长沙出版社', '2020-10-12', '50', 20);
+INSERT INTO `t_book` VALUES (11, '1020', '时间的秩序', '5540', '天泽', '长沙出版社', '2020-10-08', '50', 30);
 
 -- ----------------------------
 -- Table structure for t_config
@@ -70,12 +78,13 @@ CREATE TABLE `t_cui_hai`  (
   `bookId` int(11) NULL DEFAULT NULL,
   `createDateTime` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_cui_hai
 -- ----------------------------
-INSERT INTO `t_cui_hai` VALUES (1, 18, 12, 6, '2020-10-04 21:45:17');
+INSERT INTO `t_cui_hai` VALUES (1, 5, 2, 3, '2020-10-04 21:45:17');
+INSERT INTO `t_cui_hai` VALUES (2, 6, 2, 1, '2020-10-14 22:50:31');
 
 -- ----------------------------
 -- Table structure for t_message
@@ -87,7 +96,12 @@ CREATE TABLE `t_message`  (
   `createDateTime` datetime(0) NULL DEFAULT NULL,
   `userId` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_message
+-- ----------------------------
+INSERT INTO `t_message` VALUES (1, '这是一条留言', '2020-10-14 22:17:41', 5);
 
 -- ----------------------------
 -- Table structure for t_tree
@@ -137,16 +151,16 @@ CREATE TABLE `t_user`  (
   `type` int(5) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `weiyi`(`num_`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES (9, 'firenay', '超级管理员', '18337537555', '男', '6,61010,61015,61013,61014,61017', '2020-04-29 15:50:59', '0680d00353f3555fe7c01f11ed89bf8b', '超级管理员', 1);
-INSERT INTO `t_user` VALUES (12, '100', '陈豪', '12345678900', '男', '17,171000,171005,171009,171011,171010', '2019-12-26 23:58:07', '0680d00353f3555fe7c01f11ed89bf8b', '新用户', 2);
-INSERT INTO `t_user` VALUES (13, '200', '小红', '12345678900', '女', '17,171000,171005,171009,171011,171010', '2020-06-24 23:59:49', '0680d00353f3555fe7c01f11ed89bf8b', '小红', 2);
-INSERT INTO `t_user` VALUES (14, 'admin', '管理员', '18471484845', '男', '6,61010,61015,61013,61014,61017', '2020-06-30 12:13:51', 'FD58E1D93432F4DA5B6FF1C2821B2327', '管理员', 1);
-INSERT INTO `t_user` VALUES (15, 'fire', 'jxl', '15456878945', '男', '17,171000,171005,171009,171011,171010', '2020-06-30 13:21:51', '0680d00353f3555fe7c01f11ed89bf8b', '新用户', 2);
+INSERT INTO `t_user` VALUES (1, 'firenay', '超级管理员', '18337537555', '男', '6,61010,61015,61013,61014,61017', '2020-09-29 15:50:59', 'a48ae3782681f1e4d12cbb84d14f368c', '超级管理员', 1);
+INSERT INTO `t_user` VALUES (2, '100', '小明', '12345678900', '男', '17,171000,171005,171009,171011,171010', '2020-10-26 23:58:07', 'a48ae3782681f1e4d12cbb84d14f368c', '小明', 2);
+INSERT INTO `t_user` VALUES (3, '200', '小红', '12345678900', '女', '17,171000,171005,171009,171011,171010', '2020-09-24 23:59:49', 'a48ae3782681f1e4d12cbb84d14f368c', '小红', 2);
+INSERT INTO `t_user` VALUES (4, 'admin', '管理员', '18471484845', '男', '6,61010,61015,61013,61014,61017', '2020-09-30 12:13:51', '2bea18ebdb4c5e5a98aaa5d9fcba56a0', '管理员', 1);
+INSERT INTO `t_user` VALUES (5, 'th', '谭慧', '15456878945', '女', '6,61010,61015,61013,61014,61017', '2020-09-30 13:21:51', 'a48ae3782681f1e4d12cbb84d14f368c', '管理员', 1);
 
 -- ----------------------------
 -- Table structure for t_user_sub
@@ -160,16 +174,16 @@ CREATE TABLE `t_user_sub`  (
   `returnDateTime` datetime(0) NULL DEFAULT NULL,
   `type` int(4) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_user_sub
 -- ----------------------------
-INSERT INTO `t_user_sub` VALUES (14, 12, 6, '2020-10-01 23:58:39', '2020-10-02 00:02:34', 2);
-INSERT INTO `t_user_sub` VALUES (15, 12, 3, '2020-10-01 23:59:30', '2020-10-18 00:02:32', 2);
-INSERT INTO `t_user_sub` VALUES (16, 13, 4, '2020-10-02 00:00:41', '2020-10-25 00:02:32', 2);
-INSERT INTO `t_user_sub` VALUES (17, 13, 3, '2020-10-02 00:00:43', '2020-10-28 00:02:32', 2);
-INSERT INTO `t_user_sub` VALUES (18, 12, 6, '2020-10-04 21:44:56', '2020-10-05 00:02:32', 1);
-INSERT INTO `t_user_sub` VALUES (19, 12, 3, '2020-10-04 21:44:57', '2020-10-09 00:02:32', 1);
+INSERT INTO `t_user_sub` VALUES (1, 2, 3, '2020-10-01 23:58:39', '2020-10-02 00:02:34', 2);
+INSERT INTO `t_user_sub` VALUES (2, 2, 1, '2020-10-01 23:59:30', '2020-10-18 00:02:32', 2);
+INSERT INTO `t_user_sub` VALUES (3, 3, 2, '2020-10-02 00:00:41', '2020-10-15 00:02:32', 2);
+INSERT INTO `t_user_sub` VALUES (4, 3, 1, '2020-10-02 00:00:43', '2020-10-18 00:02:32', 2);
+INSERT INTO `t_user_sub` VALUES (5, 2, 3, '2020-10-04 21:44:56', '2020-10-05 00:02:32', 1);
+INSERT INTO `t_user_sub` VALUES (6, 2, 1, '2020-10-04 21:44:57', '2020-10-09 00:02:32', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
