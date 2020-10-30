@@ -11,7 +11,7 @@
  Target Server Version : 50729
  File Encoding         : 65001
 
- Date: 15/10/2020 00:10:17
+ Date: 30/10/2020 21:08:07
 */
 
 SET NAMES utf8mb4;
@@ -78,13 +78,13 @@ CREATE TABLE `t_cui_hai`  (
   `bookId` int(11) NULL DEFAULT NULL,
   `createDateTime` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_cui_hai
 -- ----------------------------
-INSERT INTO `t_cui_hai` VALUES (1, 5, 2, 3, '2020-10-04 21:45:17');
-INSERT INTO `t_cui_hai` VALUES (2, 6, 2, 1, '2020-10-14 22:50:31');
+INSERT INTO `t_cui_hai` VALUES (1, 5, 1, 3, '2020-10-04 21:45:17');
+INSERT INTO `t_cui_hai` VALUES (2, 6, 1, 1, '2020-10-14 22:50:31');
 
 -- ----------------------------
 -- Table structure for t_message
@@ -96,12 +96,13 @@ CREATE TABLE `t_message`  (
   `createDateTime` datetime(0) NULL DEFAULT NULL,
   `userId` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_message
 -- ----------------------------
 INSERT INTO `t_message` VALUES (1, '这是一条留言', '2020-10-14 22:17:41', 5);
+INSERT INTO `t_message` VALUES (2, '我撒一把盐试试', '2020-10-30 21:02:06', 2);
 
 -- ----------------------------
 -- Table structure for t_tree
@@ -174,7 +175,7 @@ CREATE TABLE `t_user_sub`  (
   `returnDateTime` datetime(0) NULL DEFAULT NULL,
   `type` int(4) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_user_sub
@@ -183,7 +184,8 @@ INSERT INTO `t_user_sub` VALUES (1, 2, 3, '2020-10-01 23:58:39', '2020-10-02 00:
 INSERT INTO `t_user_sub` VALUES (2, 2, 1, '2020-10-01 23:59:30', '2020-10-18 00:02:32', 2);
 INSERT INTO `t_user_sub` VALUES (3, 3, 2, '2020-10-02 00:00:41', '2020-10-15 00:02:32', 2);
 INSERT INTO `t_user_sub` VALUES (4, 3, 1, '2020-10-02 00:00:43', '2020-10-18 00:02:32', 2);
-INSERT INTO `t_user_sub` VALUES (5, 2, 3, '2020-10-04 21:44:56', '2020-10-05 00:02:32', 1);
-INSERT INTO `t_user_sub` VALUES (6, 2, 1, '2020-10-04 21:44:57', '2020-10-09 00:02:32', 1);
+INSERT INTO `t_user_sub` VALUES (5, 2, 3, '2020-10-04 21:44:56', '2020-10-05 00:02:32', 2);
+INSERT INTO `t_user_sub` VALUES (6, 2, 1, '2020-10-04 21:44:57', '2020-10-09 00:02:32', 2);
+INSERT INTO `t_user_sub` VALUES (7, 2, 11, '2020-10-30 21:02:28', '2020-10-30 21:03:05', 2);
 
 SET FOREIGN_KEY_CHECKS = 1;
